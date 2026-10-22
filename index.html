@@ -3,13 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<!--
-  TrialPal Recruitment · Prototipo CRM (formularios por estudio y rango de edad)
-  Archivo autónomo: no requiere build. Datos de Odoo simulados.
-
-  Hotjar (opcional): pega aquí el código de seguimiento de tu sitio en Hotjar
-  (Hotjar > Settings > Sites & Organizations > Tracking code) y registra la URL de GitHub Pages.
--->
+<!-- TrialPal Recruitment · Prototipo CRM (formularios por estudio y rango de edad). Archivo autónomo, datos de Odoo simulados. -->
+<!-- Hotjar Tracking Code for https://carolinaricob.github.io/Recruitment/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2855290,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <title>TrialPal Campos por Estudio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1672,7 +1677,7 @@ function heatPanel(){
   <div class="kvs"><span>Pantalla</span><b>${esc(SCREEN_ES[scr]||scr)}</b><span>Vista</span><b>${heatBucket()==='desk'?'Escritorio (≥ 900 px)':'Móvil / ventana angosta'}</b><span>Clics aquí</span><b class="num">${pts}</b><span>Clics guardados</span><b class="num">${all}</b></div>
   ${Object.keys(byScreen).length?`<div class="hp-list"><span class="label" style="padding:0">Clics por pantalla</span>${Object.entries(byScreen).sort((a,b)=>b[1]-a[1]).map(([k,n])=>`<div><span>${esc(SCREEN_ES[k]||k)}</span><b class="num">${n}</b></div>`).join('')}</div>`:''}
   <div class="hp-scale"><span>Menos</span><i></i><span>Más</span></div>
-  <p class="small muted">${HEAT.err?esc(HEAT.err):HEAT.db?'Se guardan los clics de todas las personas con acceso a este enlace. Solo la pantalla y la posición; nunca lo que se escribe.':'Esta copia no guarda clics compartidos: solo verás los de esta visita. Para mapas de calor de todos los usuarios, conecta Hotjar (ver comentario en el &lt;head&gt;).'}</p>
+  <p class="small muted">${HEAT.err?esc(HEAT.err):HEAT.db?'Se guardan los clics de todas las personas con acceso a este enlace. Solo la pantalla y la posición; nunca lo que se escribe.':'Esta copia no guarda clics compartidos: solo verás los de esta visita. Los mapas de calor y grabaciones de todos los usuarios están en Hotjar.'}</p>
   <p class="small muted">Cambia de pantalla en el prototipo para ver su mapa. Los clics de escritorio y de móvil se muestran por separado.</p>
  </div>`:''}`;
 }
